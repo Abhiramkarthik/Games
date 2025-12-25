@@ -1,0 +1,1138 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[a4paper,left=1.5in,right=1.0in,top=1.0in,bottom=1.0in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\renewcommand{\baselinestretch}{1.25}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{.75 cm}
+\usepackage{mathptmx}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{tabto}
+\usepackage{hyperref}
+\usepackage[format=plain,
+            labelfont={bf,it},
+            textfont=it]{caption}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstdefinestyle{htmlcss}{
+  language=HTML,
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  frame=single,
+  keywordstyle=\color{blue},
+  stringstyle=\color{teal},
+  commentstyle=\color{gray},
+  morekeywords={div,body,head,html,meta,link,style,script},
+  alsoletter={<>=-},
+}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+
+\lstdefinestyle{nodejs}{
+  language=JavaScript,
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  frame=single,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{teal},
+  commentstyle=\color{gray},
+  morekeywords={import,from,express,app,get,listen,render},
+}
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{center}
+   \begin{LARGE}
+    \textbf{Games}\\[.75cm]
+   \end{LARGE}
+   \textbf{\large A}\\
+   \textbf{\large Industrial Oriented Mini Project}\\[.5cm]  
+   \textit{\large Submitted in partial fulfillment of the requirements for the award of the degree of}\\[1.5cm]
+   \textup{\Large \textbf{Bachelor of Technology}}\\
+   \textbf{\Large in}\\
+   \textup{\Large \textbf{Computer Science and Engineering AI and ML}}\\[1cm]
+   \textup{\large Submitted by}\\[1cm]
+   \begin{table}[ht]
+    \centering
+    \begin{tabular}{l r}
+     {\large \textbf{ B. Sai Krishna Reddy }} & {\large \textbf{ 22SS1A6604}}\\
+     {\large \textbf{B. Ganesh Naik}}& {\large \textbf{ 22SS1A6605}}\\
+     {\large \textbf{G. Vishnu}}& {\large \textbf{22SS1A6618}}\\
+     {\large \textbf{M. Abhiram Karthik}}& {\large \textbf{22SS1A6630}}\\
+     {\large \textbf{K. Santhosh}}& {\large\textbf{ 22SS1A6650}}\\
+    \end{tabular}
+   \end{table}
+   \textup{\Large Under the guidance of}\\[.5cm]
+   \textbf{\Large Dr. G. Priyanka Jeeva Karunya}\\[.5cm]
+   \textup{\Large Assistant Professor}\\[.5cm]
+   \begin{figure}[h!]
+    \centering 
+    \includegraphics[width=4cm]{jntulogo.png}
+   \end{figure}
+   \textup{ Department of Computer Science and Engineering AI and ML}\\[.5cm]
+   \textup{ JNTUH University College of Engineering Sultanpur}\\[.25cm] 
+   \textup{\large Sultanpur(V), Pulkal(M), Sangareddy district, Telangana-502273}\\[.25cm]
+   \textup{\large JUNE 2025}
+  \end{center} 
+\end{titlepage}
+
+\pagenumbering{arabic}
+\addcontentsline{toc}{chapter}{Certificate}
+
+\begin{center}
+ {\large\textbf{JNTUH UNIVERSITY COLLEGE OF ENGINEERING SULTANPUR}}\\
+ \textup{\normalsize{Sultanpur(V), Pulkal(M), Sangareddy-502273, Telangana}}\\[1cm]
+ 
+ \begin{figure}[h!]
+  \centering
+  \includegraphics[width=4cm]{jntulogo.png}
+ \end{figure}
+ 
+ {\large\textup{Department of Computer Science and Engineering AI and ML}}\\[1.0cm]
+ {\Large \textbf{\textit{Certificate}}}\\
+ \vspace{0.5cm}
+\end{center}
+This is to certify that the Industrial Oriented Mini Project report work entitled "\textbf{Games}" is a bonafide work carried out by a team consisting of \textbf{B. Sai Krishna Reddy} bearing Roll no. \textbf{22SS1A6604}, \textbf{B. Ganesh Naik} bearing Roll no. \textbf{22SS1A6605}, \textbf{G. Vishnu} bearing Roll no. \textbf{22SS1A6618}, \textbf{M. Abhiram Karthik} bearing Roll no. \textbf{22SS1A6630}, \textbf{K. Santhosh} bearing Roll no. \textbf{22SS1A6650} in partial fulfillment of the requirements for the degree of BACHELOR OF TECHNOLOGY in COMPUTER SCIENCE AND ENGINEERING AI and ML discipline to Jawaharlal Nehru Technological University Hyderabad University College of Engineering Sultanpur during the academic year 2024 - 2025.\\ \\
+The results embodied in this report have not been submitted to any other University or Institution for the award of any degree or diploma.\\
+\vspace{1cm}\\
+\textbf{Guide \hfill Head of the Department\\}
+\textbf{Dr. G. Priyanka Jeeva Karunya \hfill Dr. G Narsimha \\}
+{\textbf{Assistant Professor} \hfill \textbf{Professor and Principal}}
+\begin{center}
+ \vspace{0.5 cm}
+\end{center}
+
+\newpage
+\addcontentsline{toc}{chapter}{Declaration} 
+\begin{center}
+{\LARGE \textbf{\textit{Declaration}}}
+\end{center} 
+\vspace{2cm}
+{\large We hereby declare that the Industrial Oriented Mini Project entitled "\textbf{Games}" is a bonafide work carried out by a team consisting of {B. Sai Krishna Reddy} bearing Roll no. \textbf{22SS1A6604}, \textbf{B. Ganesh Naik} bearing Roll no. \textbf{22SS1A6605}, \textbf{G. Vishnu} bearing Roll no. \textbf{22SS1A6618}, \textbf{M. Abhiram Karthik} bearing Roll no. \textbf{22SS1A6630}, \textbf{K. Santhosh} bearing Roll no. \textbf{22SS1A6650} in partial fulfillment of the requirements for the degree of Bachelor of Technology in Computer Science and Engineering AI and ML discipline to Jawaharlal Nehru Technological University Hyderabad University College of Engineering Sultanpur during the academic year 2024-2025. The results embodied in this report have not been submitted to any other University or Institution for the award of any degree or diploma.}\\ \\
+\vspace{4.0cm}
+\begin{table}[ht]
+ \begin{flushright}
+  \begin{tabular}{l r}
+  {\large \textbf{ B. Sai Krishna Reddy }} & {\large \textbf{ 22SS1A6604}}\\[0.5cm]
+     {\large \textbf{B. Ganesh Naik}}& {\large \textbf{ 22SS1A6605}}\\[0.5cm]
+     {\large \textbf{G. Vishnu}}& {\large \textbf{22SS1A6618}}\\[0.5cm]
+     {\large \textbf{M. Abhiram Karthik}}& {\large \textbf{22SS1A6630}}\\[0.5cm]
+     {\large \textbf{K. Santhosh}}& {\large\textbf{ 22SS1A6650}}\\[0.5cm]
+ \end{tabular}
+ \end{flushright}
+\end{table}
+
+\newpage
+\addcontentsline{toc}{chapter}{Acknowledgment} 
+\begin{center}
+{\LARGE \textbf{\textit{Acknowledgment}}}
+\end{center}
+\vspace{1cm}
+{\large We wish to take this opportunity to express our deep gratitude to all those who helped us in various ways during our Industrial Oriented Mini Project report work. It is our pleasure to acknowledge the help of all those individuals who were responsible for foreseeing the successful completion of our Industrial Oriented Mini Project report.\\
+\hspace*{35pt}We express our sincere gratitude to \textbf{\large Dr. G Narsimha, Professor and Principal}, JNTUHUCES for his support during the course period.\\ \\
+\hspace*{35pt}We sincerely thank \textbf{\large Dr. Y. Raghavender Rao, Professor and Vice Principal}, JNTUHCES for his kind help and co-operation.\\
+
+\hspace*{35pt}We are thankful to our guide \textbf{\large Dr. G. Priyanka Jeeva Karunya, Assistant Professor} for her constant support, effective suggestions and guidance in the completion of our Real Time Research Project.\\\\
+\hspace*{35pt}Finally, we express our gratitude with great admiration and respect to our faculty for their moral support and encouragement throughout the course.}}\\\\
+
+\begin{table}[ht]
+ \begin{flushright}
+  \begin{tabular}{l r}
+  {\large \textbf{ B. Sai Krishna Reddy }} & {\large \textbf{ 22SS1A6604}}\\[0.2cm]
+     {\large \textbf{B. Ganesh Naik}}& {\large \textbf{ 22SS1A6605}}\\[0.2cm]
+     {\large \textbf{G. Vishnu}}& {\large \textbf{22SS1A6618}}\\[0.2cm]
+     {\large \textbf{M. Abhiram Karthik}}& {\large \textbf{22SS1A6630}}\\[0.2cm]
+     {\large \textbf{K. Santhosh}}& {\large\textbf{ 22SS1A6650}}\\[0.2cm]
+ \end{tabular}
+ \end{flushright}
+\end{table}
+
+\newpage
+\tableofcontents
+\addtocontents{toc}
+
+\newpage
+\addcontentsline{toc}{chapter}{Abstract}
+\begin{center}
+{\LARGE \textbf{\textit{Abstract}}}
+\end{center}
+\vspace{0.5cm}
+{\large The rise of web technologies has significantly transformed how interactive content is developed and consumed. This project presents a dynamic, browser-based collection of mini-games, designed and implemented as a demonstration of full-stack web development skills. The application includes four popular and engaging games — Simon, Random Dice Roll, Tic-Tac-Toe, and Drum Play — each of which serves as a practical showcase of user interaction, logic handling, and real-time response mechanisms in a web environment. These games are built using a combination of HTML, CSS, and JavaScript for the front-end interface, and Node.js, Express.js, and EJS (Embedded JavaScript) for the server-side and templating components. Together, these technologies create a seamless and interactive user experience. }
+
+
+{\large The Simon game is a memory-based challenge that tests the user's ability to repeat color and sound patterns. Its implementation demonstrates the use of event-driven programming and time-based sequence control. The Random Dice Roll game offers a simple yet effective way to simulate randomness in a user interface, showcasing logic control and UI updates. Tic-Tac-Toe, a strategic two-player game, is implemented with game state management, win condition checking, and dynamic UI rendering, making it an excellent example of logic-heavy game development in JavaScript. Lastly, Drum Play allows users to interact with virtual drums using keyboard inputs or mouse clicks, integrating sound playback and visual feedback, which emphasizes audio integration and real-time user response.}
+
+\newpage
+\pagenumbering{arabic}
+\chapter{INTRODUCTION}
+
+\section{Background}
+{\large In the digital era, web-based games have gained popularity due to their accessibility, interactivity, and entertainment value. Developing such games using modern web technologies allows developers to merge creativity with functionality while enhancing their skills in full-stack development. This project explores the creation of a browser-based mini-game platform featuring four engaging games.}
+
+\section{Objective}
+{\large The primary aim of this project is to design and implement an interactive game platform using full-stack web development tools. Each game should:}
+\begin{itemize}
+   {\large \item Run directly in the browser
+    \item Respond to user input in real time
+    \item Demonstrate core logic, UI/UX, and event handling
+    \item Be modular and maintainable}
+\end{itemize}
+
+\section{Technologies Used}
+\begin{itemize}
+    {\large\item HTML/CSS: Page structure and styling
+    \item Node.js: Server-side runtime
+    \item JavaScript: Game logic and interactivity
+    \item Express.js: Web application framework for routing
+    \item EJS: Template engine for rendering views dynamically}
+\end{itemize}
+
+\section{Scope}
+{\large The system includes four mini-games:}
+\begin{itemize}
+    {\large\item Simon Game – Tests memory through pattern repetition
+    \item Random Dice Roll – Simulates dice throwing
+    \item Tic-Tac-Toe – Classic two-player logic game
+    \item Drum Kit – A fun sound-based game triggered by keystrokes or mouse clicks}
+\end{itemize}
+{\large All games are accessible through a single interface hosted via an Express.js server.}
+
+\section{Significance}
+{\large This project is not just an entertainment platform—it demonstrates real-world skills in front-end and back-end integration. It serves as a strong base for future development involving multiplayer features, database integration, and deployment.}
+
+\newpage
+\chapter{LITERATURE REVIEW}
+
+\section{Evolution of Web-Based Games}
+
+    {\large Jesse Schell’s The Art of Game Design is a foundational book in the field of game development and user experience. The book introduces the concept of "lenses"—perspectives through which designers can examine and refine their games. It emphasizes understanding the player's psychology, balancing challenge and reward, and aligning gameplay with intuitive design principles.}
+
+
+\section{Front-End Technologies in Game Development}
+{\large The JavaScript Guide on MDN Web Docs is a comprehensive and authoritative resource for learning JavaScript, one of the core technologies of web development. Maintained by Mozilla, this guide covers everything from basic syntax and data types to advanced topics like object-oriented programming, asynchronous programming (promises, async/await), and event handling.}
+
+{\large EJS is a simple templating engine for JavaScript, primarily used with Node.js and Express.js to render dynamic content in HTML pages. It allows developers to embed JavaScript logic directly within HTML using special tags. This enables the creation of reusable components and dynamic pages based on server-side data. }
+
+\section{Back-End Frameworks for Game Hosting}
+{\large Express.js is a minimal and flexible web application framework for Node.js, designed to build web applications and APIs efficiently. It simplifies the process of handling HTTP requests, routing, and middleware integration. Express provides robust features like dynamic routing, template engine support, and easy RESTful API creation, making it ideal for full-stack JavaScript development.}
+\newpage
+\chapter{Design}
+
+{\large This section outlines the system design, user interface layout, application architecture, and technology integration used to develop the web-based mini-game platform.}
+
+\section{System Architecture}
+
+    {\large\item \textbf{Client-Server Model:} The application uses a client-server architecture, where the client (browser) interacts with a Node.js + Express server that delivers pages and handles logic.
+    \item \textbf{Technology Stack:}
+    \begin{itemize}
+        \item Front-End: HTML, CSS, JavaScript
+        \item Back-End: Node.js, Express.js
+        \item Templating Engine: EJS (Embedded JavaScript)
+        \item Runtime Environment: JavaScript (both client and server side)}
+        
+\end{itemize}
+
+\vspace{2cm}
+\section{Application Flow Design}
+\begin{itemize}
+    \item \textbf{Routing Structure:}
+    \begin{itemize}
+        \item \texttt{/} - Home Page
+        \item \texttt{/simon} - Simon Game
+        \item \texttt{/dice} - Random Dice Roll
+        \item \texttt{/tic-tac-toe} - Tic-Tac-Toe Game
+        \item \texttt{/drum} - Drum Kit Game
+    \end{itemize}
+    
+    \item \textbf{Request-Response Cycle:}
+    \begin{enumerate}
+        \item The user navigates to a game route.
+        \item The Express server renders the appropriate EJS view.
+        \item The browser loads the game's interface and JavaScript logic.
+    \end{enumerate}
+\end{itemize}
+
+\section{Game Module Design}
+Each game is treated as a self-contained module with:
+\begin{itemize}
+    \item An EJS template for structure.
+    \item A CSS file for styling.
+    \item A JavaScript file for gameplay logic.
+\end{itemize}
+
+\textbf{Example: Simon Game}
+\begin{itemize}
+    \item Functions: \texttt{startGame()}, \texttt{nextSequence()}, \texttt{checkAnswer()}
+    \item Events: Button clicks
+    \item Feedback: Color animations and sound cues
+\end{itemize}
+
+\textbf{Example: Tic-Tac-Toe}
+\begin{itemize}
+    \item Functions: \texttt{makeMove()}, \texttt{checkWin()}, \texttt{resetGame()}
+    \item Layout: 3x3 grid with alternating turns and win detection
+\end{itemize}
+
+\section{User Interface Design}
+\begin{itemize}
+    \item \textbf{Responsive Design:} Designed for both mobile and desktop using media queries.
+    \item \textbf{Consistent Layout:} A unified navigation bar allows switching between games.
+    \item \textbf{User Feedback:} Visual and audio feedback like button animations and alert messages.
+\end{itemize}
+
+\section{Design Principles Followed}
+\begin{itemize}
+    \item \textbf{Separation of Concerns:} HTML handles structure, CSS handles appearance, JavaScript manages logic.
+    \item \textbf{Modularity:} Games are structured as independent components.
+    \item \textbf{Reusability:} Common elements like header and footer are reused across pages.
+\end{itemize}
+
+\newpage
+\chapter{UML Diagrams}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=12cm]{use.jpeg}
+    \caption{\textit{\textbf{Use case diagram}}}
+    \label{fig:Use case diagram}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=12cm]{class.jpeg}
+    \caption{\textit{\textbf{Class diagram}}}
+    \label{fig:class diagram}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=12cm]{sequence.jpeg}
+    \caption{\textit{\textbf{Sequence diagram}}}
+    \label{fig:Sequence diagram}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=12cm]{activity.jpeg}
+    \caption{\textit{\textbf{Activity diagram}}}
+    \label{fig:Activity diagram}
+\end{figure}
+
+\newpage
+\chapter{Implementation}
+
+This chapter outlines the step-by-step development process followed to create the web-based mini-game platform.
+
+\section{Development Methodology}
+The project followed an iterative development model:
+\begin{itemize}
+    \item \textbf{Planning:} Defining game features and UI components.
+    \item \textbf{Design:} Wireframing the interface and preparing game logic flowcharts.
+    \item \textbf{Implementation:} Writing HTML, CSS, and JavaScript code for each game.
+    \item \textbf{Testing:} Conducting unit and integration testing.
+    \item \textbf{Review:} Validating game behavior and refining design.
+\end{itemize}
+
+\section{Front-End Development}
+\begin{itemize}
+    \item Created user interfaces using \textbf{HTML5} and \textbf{CSS3}.
+    \item Developed interactive behaviors using \textbf{JavaScript}:
+    \begin{itemize}
+        \item Simon Game: Color/sound sequence generator and user response validation.
+        \item Dice Game: Random dice rolling with Math.random().
+        \item Tic-Tac-Toe: 3x3 grid with win-checking logic.
+        \item Drum Kit: Keyboard and mouse event listeners triggering audio.
+    \end{itemize}
+\end{itemize}
+
+\section{Back-End Development}
+\begin{itemize}
+    \item Used \textbf{Node.js} as the runtime for executing server-side JavaScript.
+    \item Implemented the web server using \textbf{Express.js}:
+    \begin{itemize}
+        \item Define game routes.
+        \item Serve static assets.
+        \item Render dynamic views using \textbf{EJS}.
+    \end{itemize}
+\end{itemize}
+
+\section{Testing and Debugging}
+\begin{itemize}
+    \item Manual testing was performed for each game to check:
+    \begin{itemize}
+        \item Input handling
+        \item Game reset and replay functionality
+        \item Win/lose conditions
+        \item Browser responsiveness
+    \end{itemize}
+\end{itemize}
+
+\section{Challenges Faced}
+\begin{itemize}
+    \item Synchronizing animations and sound in the Simon and Drum games.
+    \item Managing user turns and draw/win logic in Tic-Tac-Toe.
+    \item Ensuring cross-browser compatibility and responsive layout design.
+\end{itemize}
+
+\section*{Code}
+\subsection{Interface}
+
+
+\begin{lstlisting}[style=htmlcss, caption=HTML Code]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Page</title>
+    <link rel="stylesheet" href="open.css">
+</head>
+
+<body onclick="location.href='/main'">
+    <div class="message">Tap anywhere to continue...</div>
+</body>
+</html>
+\end{lstlisting}
+
+
+\begin{lstlisting}[style=htmlcss, caption=CSS Code]
+html, body {
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("open.jpeg") no-repeat center center;
+    background-size: cover;
+}
+
+.message {
+    font-size: 2rem;
+    color: white;
+    margin-top: 600px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+\end{lstlisting}
+
+\subsection{Main}
+
+\begin{lstlisting}[style=htmlcss, caption=HTML Structure with Video Background]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrapper">
+    <div class="hero">
+    <video class="back-video" autoplay loop muted playsinline>
+        <source src="/gv.mp4" type="video/mp4">
+    </video>
+    
+    <nav class="nav">
+        <div class="nav-logo">
+            <h1 class="logo">Games</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <a href="/simon"><div type="button" class="btn simon"></div><h2>Simon Game</h2></a>
+            <a href="/drum"><div type="button" class="btn drum"></div><h2>Drum</h2></a>
+        </div>
+        <div class="row">
+            <a href="/dice"><div type="button" class="btn dice" ></div><h2>Dice</h2></a>
+            <a href="/ttt"><div type="button" class="btn ttt"></div><h2>Tic-Tac-Toe</h2></a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+          document.body.classList.add('fade-in');
+        });
+    </script>
+</body>
+</html>
+\end{lstlisting}
+
+
+\begin{lstlisting}[style=htmlcss, caption=CSS Styling for Main Page]
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+  
+.back-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 80px;
+  line-height: 100px;
+  z-index: 100;
+}
+
+.logo {
+  color: white;
+  font-size: 25px;
+  margin: auto;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: 150px auto 0 auto;
+}
+
+.row {
+  display: inline-block;
+}
+
+.btn {
+  margin: 25px;
+  height: 200px;
+  width: 200px;
+  border: 5px solid white;
+  border-radius: 20%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: white;
+}
+
+.simon {
+  background: url("simon.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.dice {
+  background: url("dice.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.drum {
+  background: url("drum.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.ttt {
+  background: url("ttt.jpeg") no-repeat;
+  background-size: contain;
+}
+\end{lstlisting}
+
+\subsection{Simon game}
+
+\begin{lstlisting}[style=htmlcss, caption=Simon Game HTML Page]
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Simon</title>
+  <link rel="stylesheet" href="stylesSimon.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+<body>
+  <h1 id="level-title">Press A Key to Start</h1>
+  <div class="container">
+    <div class="row">
+      <div type="button" id="green" class="btn green"></div>
+      <div type="button" id="red" class="btn red"></div>
+    </div>
+    <div class="row">
+      <div type="button" id="yellow" class="btn yellow"></div>
+      <div type="button" id="blue" class="btn blue"></div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="Simon.js"></script>
+</body>
+</html>
+\end{lstlisting}
+
+
+\begin{lstlisting}[style=htmlcss, caption=Simon Game CSS]
+body {
+  text-align: center;
+  background: url("sback.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin: 5%;
+  color: #FEF2BF;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+\end{lstlisting}
+
+\subsection{Dice game}
+
+\begin{lstlisting}[style=htmlcss, caption=Dice Game HTML Page]
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="stylesDice.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    /> 
+  </head>
+  <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="images/dice6.png" />
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="images/dice6.png"/>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
+\end{lstlisting}
+
+\begin{lstlisting}[style=htmlcss, caption=Dice Game CSS]
+.container {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.dice {
+  text-align: center;
+  display: inline-block;
+}
+
+body {
+  background: url("diback.jpeg");
+  background-size: cover;
+}
+
+h1 {
+  margin: 30px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 5px 0 #232931;
+  font-size: 8rem;
+  color: #4ECCA3;
+}
+
+p {
+  font-size: 2rem;
+  color: #4ECCA3;
+  font-family: 'Indie Flower', cursive;
+}
+
+img {
+  width: 80%;
+}
+
+footer {
+  margin-top: 5%;
+  color: #EEEEEE;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+}
+\end{lstlisting}
+
+\subsection{Drum Kit Game}
+
+\begin{lstlisting}[style=htmlcss, caption=Drum Kit HTML]
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Drum Kit</title>
+  <link rel="stylesheet" href="stylesDrum.css">
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+</head>
+
+<body>
+  <h1 id="title">Drum �� Kit</h1>
+  <div class="set">
+    <button class="w drum">w</button>
+    <button class="a drum">a</button>
+    <button class="s drum">s</button>
+    <button class="d drum">d</button>
+    <button class="j drum">j</button>
+    <button class="k drum">k</button>
+    <button class="l drum">l</button>
+  </div>
+
+  <script src="Drum.js" charset="utf-8"></script>
+</body>
+</html>
+\end{lstlisting}
+
+\begin{lstlisting}[style=htmlcss, caption=Drum Kit CSS]
+body {
+  text-align: center;
+  background: url("drback.jpeg");
+  background-size: cover;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #DBEDF3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #DA0463;
+}
+
+footer {
+  color: #DBEDF3;
+  font-family: sans-serif;
+}
+
+.set {
+  margin: 10% auto;
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 5rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 900;
+  color: #DA0463;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
+
+.red {
+  color: red;
+}
+
+.w { background-image: url("images Drum/tom1.png"); }
+.a { background-image: url("images Drum/tom2.png"); }
+.s { background-image: url("images Drum/tom3.png"); }
+.d { background-image: url("images Drum/tom4.png"); }
+.j { background-image: url("images Drum/snare.png"); }
+.k { background-image: url("images Drum/crash.png"); }
+.l { background-image: url("images Drum/kick.png"); }
+\end{lstlisting}
+
+\subsection{Tic-Tac-Toe Game}
+
+\begin{lstlisting}[style=htmlcss, caption=Tic-Tac-Toe HTML]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ttt.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <p class="msg">O player's turn.</p>
+    <div class="container">
+        <div class="btn-box"></div>
+        <div class="btn-box"></div>
+        <div class="btn-box"></div>
+        <div class="btn-box"></div>
+        <div class="btn-box"></div>
+        <div class="btn-box"></div>
+        <div class="btn-box"></div>
+        <div class="btn-box"></div>
+        <div class="btn-box"></div>
+    </div>
+    <button class="reset">Reset</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <script src="ttt.js"></script>
+</body>
+</html>
+\end{lstlisting}
+
+
+\begin{lstlisting}[style=htmlcss, caption=Tic-Tac-Toe CSS]
+* {
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+}
+
+body {
+    background: url("tttback.jpeg");
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 30px;
+}
+
+h1 {
+    padding-bottom: 2em;
+    color: black;
+}
+
+p {
+    padding: 1em;
+    color: black;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2em;
+}
+
+.btn-box {
+    height: 3em;
+    width: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3em;
+    background-color: #f4f1f1;
+    color: black;
+    font-size: 1em;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.btn-box:hover {
+    transform: scale(1.05);
+    background-color: white;
+}
+
+.reset {
+    margin: 2em;
+    padding: 0.5em;
+    border-radius: 0.8em;
+    border: none;
+    font-size: 0.5em;
+    background-color: darkred;
+    color: white;
+    align-items: normal;
+    cursor: pointer;
+}
+
+.reset:hover {
+    transform: scale(1.05);
+    background-color: rgb(193, 17, 17);
+}
+\end{lstlisting}
+
+\subsection{Server-Side Code: Express.js Routing}
+
+\begin{lstlisting}[style=nodejs, caption=Express Server Setup (app.js)]
+import express from "express";
+
+const app = express();
+const port = 3000;
+
+// Serve static files from 'public' folder
+app.use(express.static("public"));
+
+// Route for opening page
+app.get("/", (req, res) => {
+    res.render("open.ejs");
+});
+
+// Route for main menu page
+app.get("/main", (req, res) => {
+    res.render("main.ejs");
+});
+
+// Route for Simon game
+app.get("/simon", (req, res) => {
+    res.render("Simon.ejs");
+});
+
+// Route for Dice game
+app.get("/dice", (req, res) => {
+    res.render("dicee.ejs");
+});
+
+// Route for Drum Kit
+app.get("/drum", (req, res) => {
+    res.render("Drum.ejs");
+});
+
+// Route for Tic-Tac-Toe
+app.get("/ttt", (req, res) => {
+    res.render("ttt.ejs");
+});
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Listening to the port: ${port}`);
+});
+\end{lstlisting}
+
+\newpage
+\chapter{Testing and Evaluation}
+
+This chapter presents the testing strategies applied during the development of the web-based mini-game platform.
+
+\section{Testing Strategy}
+\begin{itemize}
+    \item \textbf{Unit Testing:} Individual JavaScript functions for game logic
+    \item \textbf{Integration Testing:} Interaction between front-end and back-end
+    \item \textbf{User Interface Testing:} Layout responsiveness and visual feedback
+    \item \textbf{Cross-Browser Testing:} Consistent behavior across browsers
+\end{itemize}
+
+\section{Testing Scenarios and Results}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Test Case} & \textbf{Expected Result} & \textbf{Outcome} \\ \hline
+Simon Game Sequence Match & Correct level progression & Passed \\ \hline
+Tic-Tac-Toe Win Detection & Declares correct winner or draw & Passed \\ \hline
+Dice Roll Randomness & Varies on each click & Passed \\ \hline
+Drum Kit Key Mapping & Plays corresponding sound & Passed \\ \hline
+Responsive Layout & Adapts to different screen sizes & Passed \\ \hline
+Navigation Between Games & Loads correct game route & Passed \\ \hline
+\end{tabular}
+\caption{Test Cases and Results}
+\end{table}
+
+\section{Performance Evaluation}
+\begin{itemize}
+    \item \textbf{Load Time:} Quick due to lightweight design
+    \item \textbf{Responsiveness:} Instant response to user inputs
+    \item \textbf{Resource Usage:} Efficient memory usage
+\end{itemize}
+
+\section{User Feedback}
+\begin{itemize}
+    \item Positive feedback on clean UI and smooth gameplay
+    \item Suggestions for visual design improvements
+\end{itemize}
+
+\section{Limitations Identified}
+\begin{itemize}
+    \item No persistent storage or scoring history
+    \item Single-player functionality only
+    \item Manual testing limits scalability
+\end{itemize}
+
+\newpage
+\chapter{Results}
+
+This chapter presents the results obtained from the implementation and testing.
+
+\section{Functional Outcomes}
+\begin{itemize}
+    \item \textbf{Simon Game:} Memory-based color and sound sequence game
+    \item \textbf{Random Dice Roll:} Two-player dice simulation
+    \item \textbf{Tic-Tac-Toe:} Turn-based strategy game
+    \item \textbf{Drum Kit:} Interactive soundboard
+\end{itemize}
+
+\section{Performance Metrics}
+\begin{itemize}
+    \item Fast load time
+    \item Low latency interaction
+    \item Cross-platform compatibility
+\end{itemize}
+
+\section{User Experience Feedback}
+\begin{itemize}
+    \item Simple and clear UI
+    \item Smooth transition between games
+    \item Enjoyable gameplay
+\end{itemize}
+
+\section{Achievement of Objectives}
+All defined goals were successfully achieved:
+\begin{itemize}
+    \item Functional, interactive web-based platform
+    \item Applied front-end and back-end technologies
+    \item Engaging user experience
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=12cm]{p1.png}
+    \caption{\textit{\textbf{Interface}}}
+    \label{fig:interface}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=12cm]{p2.png}
+    \caption{\textit{\textbf{Home page}}}
+    \label{fig:home}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=12cm]{p3.png}
+    \caption{\textit{\textbf{Simon Game}}}
+    \label{fig:simon}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=12cm]{p4.png}
+    \caption{\textit{\textbf{Drum kit play}}}
+    \label{fig:drum}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=12cm]{p5.png}
+    \caption{\textit{\textbf{Random Dice Game}}}
+    \label{fig:dice}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=12cm]{p6.png}
+    \caption{\textit{\textbf{TIC-TAC-TOE Game}}}
+    \label{fig:tictactoe}
+\end{figure}
+
+\newpage
+\newpage
+{\Large \textbf{\textit{Conclusion}}}\\
+
+The development of the web-based mini-game platform has successfully demonstrated the integration of front-end and back-end web technologies to build an engaging, interactive, and user-friendly application.
+
+{\Large \textbf{\textit{Future Scope}}}\\
+\begin{itemize}
+    \item Persistent scoring and user authentication
+    \item Multiplayer game modes
+    \item Real-time leaderboards
+    \item Additional games and difficulty levels
+    \item Enhanced UI/UX with animations
+\end{itemize}
+
+\newpage
+
+
+{\Large \textbf{\textit{References}}}\\
+\begin{itemize}
+    \item W3Schools, \textit{HTML Tutorial}. Available at: \url{https://www.w3schools.com/html/} [Accessed: June 2025].
+
+\item W3Schools, \textit{CSS Tutorial}. Available at: \url{https://www.w3schools.com/css/} [Accessed: June 2025].
+
+\item Mozilla Developer Network (MDN), \textit{JavaScript Guide}. Available at: \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide} [Accessed: June 2025].
+
+\item Node.js Foundation, \textit{Node.js Documentation}. Available at: \url{https://nodejs.org/en/docs/} [Accessed: June 2025].
+
+\item Express.js Team, \textit{Express.js Documentation}. Available at: \url{https://expressjs.com/} [Accessed: June 2025].
+
+\item EJS Template Engine, \textit{EJS Documentation}. Available at: \url{https://ejs.co/} [Accessed: June 2025].
+
+\item Schell, J. (2008). \textit{The Art of Game Design: A Book of Lenses}. CRC Press.
+
+
+\item Sommerville, I. (2015). \textit{Software Engineering} (10th ed.). Pearson Education.
+\end{itemize}
+
+\end{document}

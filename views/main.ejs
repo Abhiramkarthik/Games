@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrapper">
+    <div class="hero">
+    <video class="back-video" autoplay loop muted playsinline>
+        <source src="/gv.mp4" type="video/mp4">
+    </video>
+    
+    <nav class="nav">
+        <div class="nav-logo">
+            <h1 class="logo">Games</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <a href="/simon"><div type="button" class="btn simon"></div><h2>Simon Game</h2></a>
+            <a href="/drum"><div type="button" class="btn drum"></div><h2>Drum</h2></a>
+        </div>
+        <div class="row">
+            <a href="/dice"><div type="button" class="btn dice" ></div><h2>Dice</h2></a>
+            <a href="/ttt"><div type="button" class="btn ttt"></div><h2>Tic-Tac-Toe</h2></a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+          document.body.classList.add('fade-in');
+        });
+    </script>
+</body>
+</html>

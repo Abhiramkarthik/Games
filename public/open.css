@@ -1,0 +1,24 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("open.jpeg") no-repeat center center;
+    background-size: cover;
+}
+
+.message{
+    font-size: 2rem;
+    color: white;
+    margin-top: 600px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}

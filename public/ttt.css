@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+}
+
+body{
+    background: url("tttback.jpeg");
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 30px;
+}
+
+h1{
+    padding-bottom: 2em;
+    color: black;
+}
+p{
+    padding: 1em;
+    color: black;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 0.2em;
+}
+.btn-box{
+    height: 3em;
+    width: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3em;
+    background-color: #f4f1f1;
+    color: black;
+    font-size: 1em;
+    border: 2px solid black;
+    cursor: pointer;
+}
+.btn-box:hover{
+    transform: scale(1.05);
+    background-color: white;
+}
+.reset{
+    margin: 2em;
+    padding: 0.5em;
+    border-radius: 0.8em;
+    border: none;
+    font-size: 0.5em;
+    background-color: darkred;
+    color: white;
+    align-items: normal;
+    cursor: pointer;
+}
+.reset:hover{
+    transform: scale(1.05);
+    background-color: rgb(193, 17, 17);
+}
